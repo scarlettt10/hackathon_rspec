@@ -9,4 +9,10 @@ class User < ApplicationRecord
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+
+  def has_signed_in?
+    sign_in_count > 0
+  end
+
+  
 end
