@@ -1,0 +1,15 @@
+
+<div class="ui attached stackable menu">
+  <div class="ui container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div>
+      <button class='ui button'><%= link_to 'Home', root_path, class: 'navbar-brand' %></button>
+    </div>
+    <div>
+      <button class='ui button'><%= link_to 'Logout', destroy_user_session_path, method: :delete %></button>
+    </div>
+    <div>
+        	<button class='ui button'><%= link_to 'New post', new_user_post_path(:id) %></button>
+    </div>
+  </div><!-- /.container-fluid -->
+</div>

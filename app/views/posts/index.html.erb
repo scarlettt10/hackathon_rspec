@@ -1,0 +1,42 @@
+<h1>ToTwitterDoGram</h1>
+<p>Find me in app/views/posts/index.html.erb</p>
+
+
+<h3 class="ui center aligned header">Stackable Grid</h3>
+<div class="ui two column stackable grid">
+
+
+
+  <div class="three column row">
+    <% @posts.each do |post| %>
+      <div class="column">
+        <div class="ui segment">
+          <%= post.content %><br />
+
+          <%= link_to "here is the link", user_post_path(current_user, post.id) %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+  <!-- <% @posts.each do |p| %>
+  	<div class="ui card">
+  	  <div class="content">
+  	    <a class="header"><%= p.title %></a>
+  	    <div class="description">
+  	      <%= p.content %>
+  	    </div>
+  	  </div>
+  	  <div class="extra content">
+
+  	  </div>
+  	</div>
+  <% end %> -->
+
+  <!-- <div class="ten wide column">
+    <div class="ui segment">e</div>
+  </div>
+  <div class="six wide column">
+    <div class="ui segment">f</div>
+  </div> -->
+</div>

@@ -1,7 +1,19 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+u1 = User.create(email: "a@a.com", encrypted_password: "$2a$11$pKCuKyzaqBzI0jZ7YVeTDOHnSIknZTN.pvXC25TVtu06BvGnAekF6")
+p1a = Post.create(content: "This is a really really really really cool post.", user_id: u1.id )
+
+Comment.create(message: "No, it's not", post_id: p1a.id, user_id: u1.id)
+Comment.create(message: "I liked it", post_id: p1a.id, user_id: u1.id)
+Comment.create(message: "You're lame.", post_id: p1a.id, user_id: u1.id)
+p1b = Post.create(content: "Oh, I like grapes!", user_id: u1.id )
+Comment.create(message: "He likes grapes.", post_id: p1b.id, user_id: u1.id)
+Comment.create(message: "I think he's lying.", post_id: p1b.id, user_id: u1.id)
+Comment.create(message: "No way.", post_id: p1b.id, user_id: u1.id)
+Comment.create(message: "Dude, he loves grapes.", post_id: p1b.id, user_id: u1.id)
+
+u2 = User.create(email: "b@b.com", encrypted_password: "$2a$11$pKCuKyzaqBzI0jZ7YVeTDOHnSIknZTN.pvXC25TVtu06BvGnAekF6")
+p2a = Post.create(content: "One time we had a great time, and you were there, and you were there, and I was there, and it was great!", user_id: u2.id )
+Comment.create(message: "Lawd, lawd, it was great!", post_id: p2a.id, user_id: u2.id)
+Comment.create(message: "I remember it like it was yesterday.", post_id: p2a.id, user_id: u2.id)
+Comment.create(message: "I'm still trying to get the tattoo removed.", post_id: p2a.id, user_id: u2.id)
+p2b = Post.create(content: "If I had a hammer, I really don't think I'd hammmer in the morning", user_id: u2.id)
+Comment.create(message: "You *so* would hammer in the morning.", post_id: p2b, user_id: u2.id)
