@@ -3,6 +3,8 @@ class Post < ApplicationRecord
   has_many :comments, dependent: :destroy
 
   def have_post?
-    post_count > 0
+   if self.content
+    return true
+   end
   end
 end
